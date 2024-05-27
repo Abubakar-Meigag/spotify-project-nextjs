@@ -2,6 +2,6 @@
 
 export default function Home() {
   return (
-    <div>Hello Spotify</div>
+    <div className="text-green-200">Main Content</div>
   );
 }
