@@ -1,5 +1,6 @@
 "use client";
 
+import Modal from "@/components/Modal";
 import React, { useEffect, useState } from "react";
 
 const ModalProvider = () => {
@@ -9,14 +10,21 @@ const ModalProvider = () => {
     setIsMounted(true);
   }, []);
 
-  if (isMounted) {
+  if (!isMounted) {
     return null;
   }
 
   return (
-      <div>
-         Models!
-      </div>
+      <>
+         <Modal 
+            title= "Test Modal"
+            description="Test Description"
+            isOpen
+            onChange={() => {}}
+         >
+              Test Children
+         </Modal>
+      </>
   );
 };
 
