@@ -7,6 +7,7 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { Auth } from "@supabase/auth-ui-react";
 import { useRouter } from "next/navigation";
 import Modal from "./Modal";
+import { useEffect } from "react";
 
 
  
@@ -15,6 +16,13 @@ import Modal from "./Modal";
   const router = useRouter();
   const { session } = useSessionContext();
   const { onClose, isOpen } = useAuthModal();
+
+  useEffect(() => {
+    if(session) {
+      router.refresh();
+      onClose();
+    }
+  }, [router, session, onClose]);
 
   const onChange = (open: boolean) => {
     if (!open) {
