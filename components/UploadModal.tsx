@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import { useUser } from "@/hooks/uesUser";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import useUploadModal from "@/hooks/useUploadModal";
-import { useRouter } from "next/navigation";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/navigation";
+import useUploadModal from "@/hooks/useUploadModal";
 import uniqid from "uniqid";
+import toast from "react-hot-toast";
 
 import Modal from "./Modal";
 import Input from "./Input";
 import Button from "./Button";
-import toast from "react-hot-toast";
 
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
